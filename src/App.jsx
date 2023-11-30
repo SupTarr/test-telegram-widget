@@ -14,7 +14,7 @@ function App() {
     scriptElement.setAttribute("data-size", "large");
     scriptElement.setAttribute(
       "data-auth-url",
-      "https://test-telegram-widget.vercel.app/"
+      "test-telegram-widget.vercel.app"
     );
     scriptElement.async = true;
 
