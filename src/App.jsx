@@ -12,10 +12,7 @@ function App() {
     scriptElement.src = "https://telegram.org/js/telegram-widget.js?22";
     scriptElement.setAttribute("data-telegram-login", "suptarr_bot");
     scriptElement.setAttribute("data-size", "large");
-    scriptElement.setAttribute(
-      "data-auth-url",
-      "test-telegram-widget.vercel.app"
-    );
+    scriptElement.setAttribute("data-auth-url", "");
     scriptElement.async = true;
 
     telegramWrapperRef.current.appendChild(scriptElement);
