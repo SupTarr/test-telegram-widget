@@ -76,15 +76,15 @@ function App() {
             Data from Telegram redirecting
           </h5>
           <p className="font-normal text-left text-gray-700 dark:text-gray-400">
-            <span className="font-bold">ID: </span> {id}
+            <span className="font-bold">ID: </span> {id ? id : "-"}
           </p>
           <p className="font-normal text-left text-gray-700 dark:text-gray-400">
             <span className="font-bold">First name: </span>
-            {firstName}
+            {firstName ? firstName : "-"}
           </p>
           <p className="font-normal text-left text-gray-700 dark:text-gray-400">
             <span className="font-bold">Last name: </span>
-            {lastName}
+            {lastName ? lastName : "-"}
           </p>
         </Card>
       ) : (
