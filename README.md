@@ -8,7 +8,7 @@ This project show how to use `Telegram Login Widget` inside single-page applicat
 
 This project was created with:
 
-- [ReactJS](href="https://react.dev")
+- [ReactJS](https://react.dev)
 - [Flowbite React](https://www.flowbite-react.com/)
 - [Telegram Login Widget](https://core.telegram.org/widgets/login)
 
@@ -28,4 +28,5 @@ npm run dev
 ```
 
 Runs the app in the development mode.
+
 Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
