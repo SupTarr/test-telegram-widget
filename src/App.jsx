@@ -70,7 +70,7 @@ function App() {
         className="telegram-login-widget flex justify-center mb-3"
         ref={telegramWrapperRef}
       ></div>
-      {id === "" || firstName === "" || lastName === "" ? (
+      {id !== "" && firstName !== "" && lastName !== "" ? (
         <Card className="max-w-sm">
           <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
             Data from Telegram redirecting
