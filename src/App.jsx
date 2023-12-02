@@ -1,10 +1,20 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
+import { Card } from "flowbite-react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
+  const searchParams = useMemo(
+    () => new URLSearchParams(document.location.search),
+    []
+  );
+
   const [count, setCount] = useState(0);
+  const [id, setId] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
   const telegramWrapperRef = useRef(null);
 
   useEffect(() => {
@@ -17,6 +27,12 @@ function App() {
 
     telegramWrapperRef.current.appendChild(scriptElement);
   }, []);
+
+  useEffect(() => {
+    setId(searchParams.get("id"));
+    setFirstName(searchParams.get("first_name"));
+    setLastName(searchParams.get("last_name"));
+  }, [searchParams]);
 
   return (
     <>
@@ -51,9 +67,27 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <div
-        className="telegram-login-widget flex justify-center"
+        className="telegram-login-widget flex justify-center mb-3"
         ref={telegramWrapperRef}
       ></div>
+      {id === "" || firstName === "" || lastName === "" ? (
+        <Card className="max-w-sm">
+          <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+            Data from Telegram redirecting
+          </h5>
+          <p className="font-normal text-gray-700 dark:text-gray-400">
+            ID: {searchParams.get("id")}
+          </p>
+          <p className="font-normal text-gray-700 dark:text-gray-400">
+            First name: {searchParams.get("first_name")}
+          </p>
+          <p className="font-normal text-gray-700 dark:text-gray-400">
+            Last name: {searchParams.get("last_name")}
+          </p>
+        </Card>
+      ) : (
+        <></>
+      )}
     </>
   );
 }
